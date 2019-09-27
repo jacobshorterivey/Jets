@@ -55,23 +55,23 @@ public class Jet {
 	}
 	
 	public double getSpeedInMach() {
-		return getSpeed() * 767.269;
+		return getSpeed() / 767.269;
 	}
 
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Jet [model=")
+		builder.append("Model:")
 		.append(model)
-		.append(", speed=")
+		.append(", speed: ")
 		.append(speed)
-		.append(", getSpeedInMach()=")
+		.append(" MPH, speed (in Mach): Mach ")
 		.append(getSpeedInMach())
-		.append(", range=")
+		.append(", range: ")
 		.append(range)
-		.append(", price=")
+		.append(", price: $")
 		.append(price)
-		.append("]");
+		.append("]\n");
 		return builder.toString();
 	}
 	

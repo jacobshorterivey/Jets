@@ -26,8 +26,6 @@ public class AirField {
 	}
 	
 	public List<Jet> parseJets(String fileName) {
-		List<Jet> jets = new ArrayList<Jet>();
-
 		try (BufferedReader bufIn = new BufferedReader(new FileReader(fileName))) {
 			String line;
 
@@ -35,7 +33,6 @@ public class AirField {
 				String[] jetLine = line.split(", ");
 				
 				String model = jetLine[0];
-				
 				Double speed = Double.parseDouble(jetLine[1]);
 				Integer range = Integer.parseInt(jetLine[2]);
 				Long price = Long.parseLong(jetLine[3]);
@@ -51,9 +48,9 @@ public class AirField {
 		return jets;
 	}
 	
-//	public static void main(String[] args) {
-//		AirField af = new AirField();
-//		System.out.println(af.getJets().toString());
-//	}
+	public static void main(String[] args) {
+		AirField af = new AirField();
+		System.out.println(af.getJets());
+	}
 
 }
