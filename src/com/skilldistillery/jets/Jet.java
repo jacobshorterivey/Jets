@@ -51,7 +51,9 @@ public class Jet {
 	}
 	
 	public void fly() {
+		toString();
 		System.out.println("Flying...");
+		System.out.println("This jet can fly for " + (range/speed) + " hours." );
 	}
 	
 	public double getSpeedInMach() {
@@ -69,7 +71,7 @@ public class Jet {
 		.append(getSpeedInMach())
 		.append(", range: ")
 		.append(range)
-		.append(", price: $")
+		.append(" miles, price: $")
 		.append(price)
 		.append("]\n");
 		return builder.toString();
