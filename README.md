@@ -1,7 +1,7 @@
 ## Week 2 Homework Project for Skill Distillery
 
-## Overview
+### Overview
 
-## Technologies/Topics Applied
+### Technologies/Topics Applied
 
-## Lessons Learned
+### Lessons Learned
