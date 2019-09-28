@@ -51,32 +51,20 @@ public class Jet {
 	}
 	
 	public void fly() {
-		toString();
-		System.out.println("Flying...");
-		System.out.println("This jet can fly for " + (range/speed) + " hours." );
+		System.out.printf(getModel() + " taking off. This jet can fly for %2f hours.", (range/speed));
 	}
 	
 	public double getSpeedInMach() {
+		
 		return getSpeed() / 767.269;
 	}
 
 	@Override
 	public String toString() {
-		System.out.println(getClass().getSimpleName());
-		StringBuilder builder = new StringBuilder();
-		builder.append("Model:")
-		.append(model)
-		.append(", speed: ")
-		.append(speed)
-		.append(" MPH, speed (in Mach): Mach ")
-		.append(getSpeedInMach())
-		.append(", range: ")
-		.append(range)
-		.append(" miles, price: $")
-		.append(price)
-		.append("]\n");
-		return builder.toString();
+		return "Model: " + model + ", speed: " + speed + " MPH, speed in Mach: Mach " + getSpeedInMach() + ", range: " + range + ", price: $" + price;
 	}
+
+
 	
 	
 }
