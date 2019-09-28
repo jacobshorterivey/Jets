@@ -62,6 +62,7 @@ public class Jet {
 
 	@Override
 	public String toString() {
+		System.out.println(getClass().getSimpleName());
 		StringBuilder builder = new StringBuilder();
 		builder.append("Model:")
 		.append(model)

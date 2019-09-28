@@ -8,7 +8,7 @@ import java.util.List;
 
 public class AirField {
 	// FIELDS
-	private List<Jet> jets = new ArrayList<Jet>();;
+	private List<Jet> jets = new ArrayList<>();
 	private String fileName = "jets.txt";
 
 	// CONSTRUCTORS
@@ -38,26 +38,24 @@ public class AirField {
 				Integer range = Integer.parseInt(jetLine[3]);
 				Long price = Long.parseLong(jetLine[4]);
 
+				
+				Jet jet = null;
 
 				switch (jetType) {
 				case "b":
-					BasicJet b = new BasicJet(model, speed, range, price);
-					jets.add(b);
+					jet = new BasicJet(model, speed, range, price);
 					break;
 				case "f":
-					FighterJet f = new FighterJet(model, speed, range, price);
-					jets.add(f);
+					jet = new FighterJet(model, speed, range, price);
 					break;
 				case "c":
-					CargoPlane c = new CargoPlane(model, speed, range, price);
-					jets.add(c);
+					jet = new CargoPlane(model, speed, range, price);
 					break;
 				default:
 					break;
 				}
 
-//				Jet j = new Jet(model, speed, range, price);
-//				jets.add(j);
+				jets.add(jet);
 			}
 
 		} catch (IOException e) {
@@ -67,9 +65,9 @@ public class AirField {
 		return jets;
 	}
 
-//	public static void main(String[] args) {
-//		AirField af = new AirField();
-//		System.out.println(af.getJets());
-//	}
+	public static void main(String[] args) {
+		AirField af = new AirField();
+		System.out.println(af.getJets());
+	}
 
 }
