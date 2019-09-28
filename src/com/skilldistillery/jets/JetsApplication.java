@@ -31,7 +31,7 @@ public class JetsApplication {
 	public void displayUserMenu(Scanner kb, List<Jet> jets) {
 		boolean keepGoing = true;
 		
-		
+		int input;
 		do {
 			System.out.println("1.) List fleet"); 
 			System.out.println("2.) Fly all jets"); 
@@ -43,7 +43,6 @@ public class JetsApplication {
 			System.out.println("8.) Remove a jet from Fleet"); 
 			System.out.println("9.) Quit"); 
 			
-			int input = 1;
 			input = kb.nextInt();
 			
 			switch (input) {
@@ -61,16 +60,15 @@ public class JetsApplication {
 				break;
 			case 5:
 				loadAllCargoJets(jets);
-				
 				break;
 			case 6:
 				dogfightFighters(jets);
 				break;
 			case 7:
-				addJet(jets);
+				jets = addJet(jets, kb);
 				break;
 			case 8:
-				removeJet(jets);
+				jets = removeJet(jets, kb);
 				break;
 			case 9:
 				System.out.println("Quitting...");
@@ -127,21 +125,20 @@ public class JetsApplication {
 			}
 		}
 	}
-	public List<Jet> addJet(List<Jet> jets) {
-		Scanner jetIn = new Scanner(System.in);
+	public List<Jet> addJet(List<Jet> jets, Scanner kb) {//method not yet working
 		
 		System.out.println("If your jet is a fighter, enter an 'f'. ");
 		System.out.println("If your jet is a cargo plane, enter a 'c'. ");
 		System.out.println("Enter any other letter for a basic jet: ");
 		String jetType = kb.next();
 		System.out.println("Enter jet model/name: ");
-		String model = jetIn.nextLine();
+		String model = kb.nextLine();
 		System.out.println("Enter speed: ");
-		double speed = jetIn.nextDouble();
+		double speed = kb.nextDouble();
 		System.out.println("Enter range: ");
-		int range = jetIn.nextInt();
+		int range = kb.nextInt();
 		System.out.println("Enter price: ");
-		long price = jetIn.nextLong();
+		long price = kb.nextLong();
 		
 		
 		Jet jet = null;
@@ -157,31 +154,19 @@ public class JetsApplication {
 			break;
 		}
 		jets.add(jet); //need to return this list
-		System.out.println(jets);
-		
-		jetIn.close();
 		
 		return jets;
 		
 	}
-	public List<Jet> removeJet(List<Jet> jets) {
-		Scanner jetOut = new Scanner(System.in);
+	public List<Jet> removeJet(List<Jet> jets, Scanner kb) {
 		
 		System.out.println("Which jet would you like to remove? Enter # in the list: ");
-		int toRemove = jetOut.nextInt();
-		toRemove++;
+		int toRemove = kb.nextInt();
+		toRemove--;
 		jets.remove(toRemove);
-		System.out.println(jets);
-		
-		jetOut.close();
 		
 		return jets;
 		
-	}
-	
-	
-	
-	
-	
+	}	
 	
 }
