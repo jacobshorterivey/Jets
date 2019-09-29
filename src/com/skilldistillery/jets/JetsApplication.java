@@ -24,7 +24,6 @@ public class JetsApplication {
 	
 	public void launch(Scanner kb, List<Jet> jets) {
 		airfield = new AirField();
-//		System.out.println(airfield.getJets().toString());
 		displayUserMenu(kb, jets);
 	}
 	
@@ -125,10 +124,7 @@ public class JetsApplication {
 			}
 		}
 	}
-	public List<Jet> addJet(List<Jet> jets, Scanner kb) {//method not yet working
-
-//		System.out.println("Continuing to jet creation...");
-//		kb.nextLine();
+	public List<Jet> addJet(List<Jet> jets, Scanner kb) {
 		
 		System.out.println("If your jet is a fighter, enter an 'f'. ");
 		System.out.println("If your jet is a cargo plane, enter a 'c'. ");
@@ -157,7 +153,7 @@ public class JetsApplication {
 			jet = new BasicJet(model, speed, range, price);
 			break;
 		}
-		jets.add(jet); //need to return this list
+		jets.add(jet); 
 		
 		return jets;
 		
