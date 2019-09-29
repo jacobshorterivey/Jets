@@ -126,12 +126,16 @@ public class JetsApplication {
 		}
 	}
 	public List<Jet> addJet(List<Jet> jets, Scanner kb) {//method not yet working
+
+//		System.out.println("Continuing to jet creation...");
+//		kb.nextLine();
 		
 		System.out.println("If your jet is a fighter, enter an 'f'. ");
 		System.out.println("If your jet is a cargo plane, enter a 'c'. ");
 		System.out.println("Enter any other letter for a basic jet: ");
 		String jetType = kb.next();
 		System.out.println("Enter jet model/name: ");
+		kb.nextLine();
 		String model = kb.nextLine();
 		System.out.println("Enter speed: ");
 		double speed = kb.nextDouble();
