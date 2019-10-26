@@ -1,6 +1,6 @@
 ## Jets Project
 
-### Week 2 Homework Project for Skill Distillery
+### Week 3 Homework Project for Skill Distillery
 
 ### Overview
 The week three assignment was to create a fleet of jets, with the ability to give those jets different capabilities. All jets have a model name, speed, price, and range, but certain jets also had the ability to dogfight or carry cargo. The user also needed the option to add and remove jets from the list of jets from the virtual hanger.
